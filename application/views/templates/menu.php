@@ -219,7 +219,7 @@ date_default_timezone_set("Asia/jakarta");
 				<?php if ($_SESSION["id_level"] == ("3")) { ?>
 					<li class="nav-item">
 						<a href="<?= base_url('materi/siswa_session') ?>" class="nav-link">
-							<i class="nav-icon fas  fas fa-bible text-bold"></i>
+							<i class="nav-icon fas  fas fa-book text-bold"></i>
 							<p>Materi Session</p>
 						</a>
 					</li>

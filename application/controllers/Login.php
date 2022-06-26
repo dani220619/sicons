@@ -158,7 +158,6 @@ class Login extends CI_Controller
 
             if ($this->upload->do_upload('imagefile')) {
                 $gambar = $this->upload->data();
-
                 $save = array(
                     'id_user' => rand(000, 999),
                     'nis' => $this->input->post('nis'),
