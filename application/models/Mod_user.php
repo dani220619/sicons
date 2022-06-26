@@ -9,7 +9,7 @@ class Mod_user extends CI_Model
 
 	var $table = 'tbl_user';
 	var $column_order = array('username', 'full_name', 'id_level', 'image', 'is_active');
-	var $column_search = array('username', 'full_name', 'id_level', 'is_active');
+	var $column_search = array('username', 'full_name');
 	var $order = array('id_user' => 'desc'); // default order 
 
 	public function __construct()

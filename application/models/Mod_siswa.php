@@ -8,8 +8,8 @@ class Mod_siswa extends CI_Model
 {
 
 	var $table = 'tbl_user';
-	var $column_order = array('id_user', 'username', 'full_name', 'nis', 'email', 'id_level', 'image', 'is_active');
-	var $column_search = array('id_user', 'username', 'full_name', 'is_active');
+	var $column_order = array('a.id_user', 'a.username', 'a.full_name', 'nis', 'email', 'id_level', 'image');
+	var $column_search = array('id_user', 'username', 'full_name');
 	var $order = array('id_user' => 'desc'); // default order 
 
 	public function __construct()
@@ -20,7 +20,7 @@ class Mod_siswa extends CI_Model
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('a.*,b.nama_level, s.nama');
+		$this->db->select('a.*,b.nama_level, s.nama,');
 		$this->db->join('tbl_userlevel b', 'a.id_level=b.id_level');
 		$this->db->join('sekolah s', 'a.id_sekolah=s.id');
 		$this->db->where('a.id_level', '3');
