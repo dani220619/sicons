@@ -132,7 +132,7 @@ class Login extends CI_Controller
                     'id_level'  => "3",
                     'is_active' => "Y",
                 );
-                dead($save);
+                // dead($save);
                 $this->Mod_siswa->insertsiswa("tbl_user", $save);
                 redirect('login');
             }
