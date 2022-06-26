@@ -121,6 +121,8 @@ class Login extends CI_Controller
                 $save  = array(
                     'nis' => $this->input->post('nis'),
                     'username' => $this->input->post('username'),
+                    'id_sekolah'   => $this->input->post('id_sekolah'),
+                    'no_tlp'   => $this->input->post('no_tlp'),
                     'full_name' => $this->input->post('full_name'),
                     'password'  => get_hash($this->input->post('password')),
                     'email' => $this->input->post('email'),
@@ -130,7 +132,7 @@ class Login extends CI_Controller
                     'id_level'  => "3",
                     'is_active' => "Y",
                 );
-
+                dead($save);
                 $this->Mod_siswa->insertsiswa("tbl_user", $save);
                 redirect('login');
             }
