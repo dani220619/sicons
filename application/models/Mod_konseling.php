@@ -17,7 +17,7 @@ class Mod_konseling extends CI_Model
 		");
 		return $query->result();
 	}
-	public function showgroupkonseling($id_sekolah)
+	public function showgroupkonseling($id_sekolah, $nis)
 	{
 		$query = $this->db->query("
 		select k.*, tu.full_name as name_guru, s.nama
@@ -26,7 +26,7 @@ class Mod_konseling extends CI_Model
 				on k.id_user=tu.id_user
 				left join sekolah s
         		on k.id_sekolah=s.id
-				where k.is_active = 'GK' and k.id_sekolah = '" . $id_sekolah . "'
+				where k.is_active = 'GK' and k.id_sekolah = '" . $id_sekolah . "' and k.nis = " . $nis . "
 		");
 		return $query->result();
 	}
@@ -77,10 +77,10 @@ class Mod_konseling extends CI_Model
 			from konseling k
 			left join tbl_user tu
 			on k.nis=tu.nis
-			where k.nis = " . $nis . "");
+			where k.nis = " . $nis . " and k.is_active = 'IK'");
 		return $query->result();
 	}
-	public function jawaban_all($id_sekolah)
+	public function jawaban_all($id_sekolah, $nis)
 	{
 		$query = $this->db->query("
 		select tu.nis, tu.full_name, k.subject, k.*
@@ -88,7 +88,7 @@ class Mod_konseling extends CI_Model
 			left join tbl_user tu
 			on k.nis=tu.nis
 			where k.is_active = 'GK'
-			and k.id_sekolah = " . $id_sekolah . "
+			and k.id_sekolah = " . $id_sekolah . " and tu.nis= " . $nis . "
 			");
 		return $query->result();
 	}

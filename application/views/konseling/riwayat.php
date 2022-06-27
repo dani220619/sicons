@@ -2,9 +2,7 @@
     <section class="content">
     	<div class="container-fluid">
     		<div class="row">
-    			<?= form_error('menu', '<div class="alert alert-danger close" role="alert">', '
-          </div>') ?>
-    			<?= $this->session->flashdata('message') ?>
+    			<!-- <?= $this->session->flashdata('message') ?> -->
     			<div class="col-12">
     				<div class="card">
     					<div class="card-header bg-light">
@@ -17,7 +15,6 @@
     							<thead>
     								<tr class="bg-info">
     									<th>NO</th>
-    									<th>ID</th>
     									<th>NAMA GURU</th>
     									<th>NIS</th>
     									<th>SUBJECT</th>
@@ -34,7 +31,7 @@
 									?>
     									<tr>
     										<td><?= $no ?></td>
-    										<td><?= $d->id ?></td>
+
     										<td><?= $d->full_name ?></td>
     										<td><b><?= $d->nis ?></b></td>
     										<td><?= $d->subject ?></td>

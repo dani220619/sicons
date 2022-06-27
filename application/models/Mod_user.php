@@ -1,9 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-/**
- * Create By : Aryo
- * Youtube : Aryo Coding
- */
+
 class Mod_user extends CI_Model
 {
 
@@ -26,8 +23,6 @@ class Mod_user extends CI_Model
 		$this->db->from('tbl_user a');
 		$where = "a.id_level='1' or a.id_level='2'";
 		$this->db->where($where);
-
-
 
 		$i = 0;
 

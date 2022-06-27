@@ -14,7 +14,7 @@
     							<thead>
     								<tr class="bg-info">
     									<th>NO</th>
-    									<th>ID</th>
+    									<th>GURU</th>
     									<th>NIS</th>
     									<th>SEKOLAH</th>
     									<th>SUBJECT</th>
@@ -31,7 +31,7 @@
 									?>
     									<tr>
     										<td><?= $no++ ?></td>
-    										<td><?= $d->id ?></td>
+    										<td><?= $d->name_guru ?></td>
     										<td><b><?= $d->nis ?></b></td>
     										<td><?= $d->nama ?></td>
     										<td><?= $d->subject ?></td>

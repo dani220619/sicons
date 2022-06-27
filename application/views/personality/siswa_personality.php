@@ -13,9 +13,9 @@
 	<!-- Main content -->
 	<section class="content">
 		<!-- Sweet Alert -->
-		<?php if ($this->session->flashdata('message')) : ?>
+		<!-- <?php if ($this->session->flashdata('message')) : ?>
 			<div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('message'); ?>"></div>
-		<?php endif; ?>
+		<?php endif; ?> -->
 
 		<?php
 		if (isset($periode)) {
@@ -50,7 +50,7 @@
 															<font face="Calibri" size="4">Ya</font>
 														</b>
 													</td>
-                                                    <td align="center" colspan="4" bgcolor="#FF9D9D" class="bg-info">
+													<td align="center" colspan="4" bgcolor="#FF9D9D" class="bg-info">
 														<b>
 															<font face="Calibri" size="4">Netral</font>
 														</b>
@@ -121,56 +121,56 @@
 								<div class="box-body">
 									<h2 class="text-center">Jawaban Personality Test</h2>
 									<table id="tabelmenu" class="table table-bordered table-striped table-hover responsive">
-    							<thead>
-    								<tr class="bg-info">
-    									<th>No</th>
-    									<th>Pertanyaan</th>
-    									<th>Jawaban</th>    									    								    								
-    								</tr>
-    							</thead>
-    							<tbody>
-    								<?php
-									$no = 1;
-									$saldo = 0;
-									
-									foreach ($personality as $d) :
-									?>
-    									<tr>
-    										<td><?= $no ?></td>    										
-    										<td><?= $d->pertanyaan ?></td> 
-											<?php if ($d->jawabanHarapan == '1') { ?>
-											<td>Tidak</td> 											 					
-											<?php } elseif($d->jawabanHarapan == '2') { ?>
-												<td>Ya</td> 
-											 <?php } else { ?>
-												 <td>Netral</td> 
-											 <?php } ?>					    								    										    										    										
-    									</tr>
-                                        <?php $no++;
-									endforeach ?>
-    							</tbody>
-    						</table>
-										<div class="col-lg-4 col-xs-6">
-										</div>
+										<thead>
+											<tr class="bg-info">
+												<th>No</th>
+												<th>Pertanyaan</th>
+												<th>Jawaban</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php
+											$no = 1;
+											$saldo = 0;
+
+											foreach ($personality as $d) :
+											?>
+												<tr>
+													<td><?= $no ?></td>
+													<td><?= $d->pertanyaan ?></td>
+													<?php if ($d->jawabanHarapan == '1') { ?>
+														<td>Tidak</td>
+													<?php } elseif ($d->jawabanHarapan == '2') { ?>
+														<td>Ya</td>
+													<?php } else { ?>
+														<td>Netral</td>
+													<?php } ?>
+												</tr>
+											<?php $no++;
+											endforeach ?>
+										</tbody>
+									</table>
+									<div class="col-lg-4 col-xs-6">
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				<?php endif;
+</div>
+<?php endif;
 		} else { ?>
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="box box-primary">
-							<div class="box-body">
-								<h2 class="text-center">Tidak ada pengisian kuesioner !</h2>
-							</div>
-						</div>
-					</div>
-				</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box box-primary">
+			<div class="box-body">
+				<h2 class="text-center">Tidak ada pengisian kuesioner !</h2>
+			</div>
+		</div>
+	</div>
+</div>
 
-			<?php } ?>
+<?php } ?>
 
-				</form>
-	</section>
+</form>
+</section>
 </div>

@@ -23,7 +23,7 @@
 					</a>
 				</div>
 				<div class="col-sm-4">
-					<a href="<?= base_url('group_konseling/jawaban') ?>" class="btn btn-app bg-warning col-md-5">
+					<a href="<?= base_url('group_konseling/jawaban/' . $nis['nis'] . '') ?>" class="btn btn-app bg-warning col-md-5">
 						<span class="badge bg-info"></span>
 						<i class="fas fa-users"></i> Jawaban
 					</a>

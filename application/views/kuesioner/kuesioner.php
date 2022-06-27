@@ -13,9 +13,9 @@
 	<!-- Main content -->
 	<section class="content">
 		<!-- Sweet Alert -->
-		<?php if ($this->session->flashdata('message')) : ?>
+		<!-- <?php if ($this->session->flashdata('message')) : ?>
 			<div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('message'); ?>"></div>
-		<?php endif; ?>
+		<?php endif; ?> -->
 
 		<?php
 		if (isset($periode)) {

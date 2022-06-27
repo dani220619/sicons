@@ -35,10 +35,11 @@ class Group_Konseling extends MY_Controller
 		$data['title'] = "Riwayat konseling";
 		$id = $this->db->get_where('tbl_user', ['id_user' => $this->session->userdata('id_user')])->row_array();
 		$id_sekolah = $id['id_sekolah'];
+		$nis = $id['nis'];
 		$data['guru'] = $this->Mod_konseling->getguru($id_sekolah);
 		// $nis = $this->db->get_where('konseling', ['id' => $this->session->userdata('id')])->row_array();
 		// $id_sekolah = $nis['id_sekolah'];
-		$data['konseling'] = $this->Mod_konseling->showgroupkonseling($id_sekolah);
+		$data['konseling'] = $this->Mod_konseling->showgroupkonseling($id_sekolah, $nis);
 		// dead($id_sekolah);
 		$this->template->load('layoutbackend', 'group_konseling/riwayat', $data);
 	}
@@ -103,7 +104,8 @@ class Group_Konseling extends MY_Controller
 		$data['title'] = "Jawaban";
 		$id = $this->db->get_where('tbl_user', ['id_user' => $this->session->userdata('id_user')])->row_array();
 		$id_sekolah = $id['id_sekolah'];
-		$data['jawaban'] = $this->Mod_konseling->jawaban_all($id_sekolah);
+		$nis = $id['nis'];
+		$data['jawaban'] = $this->Mod_konseling->jawaban_all($id_sekolah, $nis);
 		// dead($data['jawaban']);
 		$this->template->load('layoutbackend', 'group_konseling/jawaban', $data);
 	}
